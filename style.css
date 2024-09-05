@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.calculator {
+    width: 320px; /* Width of the calculator */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    overflow: hidden;
+    background-color: #000;
+}
+
+.display {
+    background: #000;
+    color: #fff;
+    font-size: 2.5em; /* Display font size */
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100px; /* Increase the height of the display */
+    display: flex; /* Use flexbox to center the text */
+    align-items: flex-end; /* Align the text to the bottom */
+    justify-content: flex-end; /* Align the text to the right */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+    gap: 10px; /* Space between buttons */
+    padding: 10px;
+}
+
+button {
+    background: #eee;
+    border: none;
+    border-radius: 50%; /* Circular buttons */
+    font-size: 1.5em;
+    height: 70px; /* Height of the buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease; /* Smooth background color change */
+}
+
+/* Special handling for the '0' button to span two columns */
+button[data-action="0"] {
+    grid-column: span 2; /* Spans two columns */
+    border-radius: 35px; /* Adjust border radius to maintain rounded shape */
+    width: 100%; /* Full width of the two columns */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+    box-sizing: border-box;
+    background: #505050; /* Dark grey background */
+    color: #fff; /* White text for contrast */
+}
+
+/* Dark grey background for number and decimal buttons */
+button[data-action="decimal"],
+button[data-action="1"],
+button[data-action="2"], 
+button[data-action="3"], 
+button[data-action="4"], 
+button[data-action="5"], 
+button[data-action="6"], 
+button[data-action="7"], 
+button[data-action="8"], 
+button[data-action="9"]  {
+    background: #505050; /* Dark grey background */
+    color: #fff; /* White text for contrast */
+}
+
+/* Normal buttons should maintain their circular shape */
+button:not([data-action="0"]) {
+    width: 70px; /* Fixed width for circular buttons */
+}
+
+button:hover {
+    background: #9f9d9d; /* Slightly darker background on hover */
+}
+
+button:active {
+    background: #ccc; /* Darker background when pressed */
+}
+
+/* Styles for special function buttons */
+button[data-action="sign"],
+button[data-action="percent"],
+button[data-action="clear"] {
+    background: #a7a7a7; /* Red background for the 'AC' button */
+    color: #000; /* White text */
+}
+
+button[data-action="percent"]:hover,
+button[data-action="clear"]:hover,
+button[data-action="sign"]:hover {
+    background-color: #c1bebe;
+}
+
+button[data-action="percent"]:active,
+button[data-action="clear"]:active,
+button[data-action="sign"]:active {
+    background-color: #ddd;
+}
+
+button[data-action="equals"] {
+    background: #ffa91e; /* Green background for the '=' button */
+    color: #fff; /* White text */
+}
+
+button[data-action="divide"],
+button[data-action="multiply"],
+button[data-action="subtract"],
+button[data-action="add"] {
+    background: #ffa91e; /* Orange background for operators */
+    color: #fff; /* White text */
+    transition: background 0.2s ease; /* Smooth transition */
+}
+
+button[data-action="divide"]:hover,
+button[data-action="multiply"]:hover,
+button[data-action="subtract"]:hover,
+button[data-action="equals"]:hover,
+button[data-action="add"]:hover {
+    background-color: #fada9f;
+    color: #fff;
+}
+
+button[data-action="divide"].active,
+button[data-action="multiply"].active,
+button[data-action="subtract"].active,
+button[data-action="add"].active {
+    background: #fff; /* Change background to white when active */
+    color: #f5a623; /* Change text to orange when active */
+}
