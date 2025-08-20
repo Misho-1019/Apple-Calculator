@@ -8,10 +8,10 @@ This project mimics the clean design and basic functionality of the original App
 ## 📸 Screenshots
 
 ### Calculator Interface
-![Calculator UI](assets/Calculator1.png)
+![Calculator UI](./assets/Calculator2.png)
 
 ### Example Calculation
-![Calculation Example](assets/Calculator2.png)
+![Calculation Example](./assets/Calculator1.png)
 
 ---
 
